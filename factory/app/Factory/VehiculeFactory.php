@@ -2,24 +2,25 @@
 
 namespace App\Factory;
 
+use App\Entity\Vehicule;
 use App\Entity\Car;
 use App\Entity\Truck;
 use App\Entity\Bicycle;
 
 class VehiculeFactory
 {
-    public static function makeCar($costPerKm, $fuelType): Car
+    public static function makeCar(): Car
     {
-        return new Car($costPerKm, $fuelType);
+        return new Car(0.5, 'essence');
     }
 
-    public static function makeTruck($costPerKm, $fuelType): Truck
+    public static function makeTruck(): Truck
     {
-        return new Truck($costPerKm, $fuelType);
+        return new Truck(1.2, 'diesel');
     }
 
-    public static function makeBicycle($costPerKm, $fuelType): Bicycle
+    public static function makeBicycle(): Bicycle
     {
-        return new Bicycle($costPerKm, $fuelType);
+        return new Bicycle(0, 'none');
     }
 }
